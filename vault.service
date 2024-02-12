@@ -1,0 +1,23 @@
+[Unit]
+Description=Vault Agent
+Documentation=https://developer.hashicorp.com/vault/docs/agent
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=vault
+Group=vault
+PIDFile=/apps/vault/.pidfile
+ExecStart=/usr/bin/vault agent -config=/apps/vault/config.hcl
+KillMode=process
+KillSygnal=SIGTERM
+Restart=on-failure
+RestartSec=5s
+PermissionsStartOnly=true
+ReadWritePaths=/apps/vault/secret
+ReadOnlyPaths=/apps/vault/secret/.clien_token
+StartLimitRurst=3
+StartLinitInterval=800s
+
+[Install]
+WantedBy=multi-user.target
