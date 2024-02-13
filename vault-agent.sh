@@ -15,7 +15,7 @@ sudo wget "https://releases.hashicorp.com/vault/1.15.5/vault_1.15.5_linux_amd64.
 sudo unzip vault_1.15.5_linux_amd64.zip
 sudo mv vault /apps/vault/vault
 #create symlink to the vault binary
-ln -s /apps/vault/vault /usr/bin/vault
+sudo ln -s /apps/vault/vault /usr/bin/vault
 
 #give access to the vault user
 sudo chown vault:vault /apps/vault/vault
