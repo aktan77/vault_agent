@@ -3,7 +3,7 @@
 sudo useradd -m -s /bin/bash -u 2000004 vault
 
 #create vault folder
-sudo mkdir /apps/vault
+sudo mkdir -p /apps/vault
 
 #give access to the vault user
 sudo chown vault:vault /apps/vault
@@ -21,10 +21,10 @@ ln -s /apps/vault/vault /usr/bin/vault
 sudo chown vault:vault /apps/vault/vault
 
 #create/move vault agent configuration file
-sudo mv vault-agent.hcl /apps/vault/vault-agent.hcl 
+sudo cp vault-agent.hcl /apps/vault/vault-agent.hcl 
 
 #create/move vault service configuration file
-sudo mv vault.hcl /apps/vault/vault.hcl
+sudo cp vault.service /etc/systemd/system/vault.service
 
 #start the vault 
 sudo systemctl enable vault
