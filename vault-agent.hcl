@@ -12,7 +12,7 @@ auto_auth {
     type = "token_file"
 
     config {
-      token_file_path = "/home/cloud_user/.vault-token"
+      token_file_path = "/apps/vault/secret/.vault-token"
     }
   }
 }

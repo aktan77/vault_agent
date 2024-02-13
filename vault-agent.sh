@@ -4,6 +4,7 @@ sudo useradd -m -s /bin/bash -u 2000004 vault
 
 #create vault folder
 sudo mkdir -p /apps/vault
+sudo mkdir -p /apps/vault/sercret
 
 #give access to the vault user
 sudo chown vault:vault /apps/vault

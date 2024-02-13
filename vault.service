@@ -8,7 +8,7 @@ After=network-online.target
 User=vault
 Group=vault
 PIDFile=/apps/vault/.pidfile
-ExecStart=/usr/bin/vault agent -config=/apps/vault/config.hcl
+ExecStart=/usr/bin/vault agent -config=/apps/vault/vault-agent.hcl
 KillMode=process
 KillSygnal=SIGTERM
 Restart=on-failure
