@@ -1,4 +1,4 @@
-pid_file = "./pidfile"
+pid_file = "apps/vault/pidfile"
 
 vault {
   address = "https://19d73b6fe41c.mylabserver.com:443"

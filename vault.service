@@ -10,14 +10,14 @@ Group=vault
 PIDFile=/apps/vault/.pidfile
 ExecStart=/usr/bin/vault agent -config=/apps/vault/vault-agent.hcl
 KillMode=process
-KillSygnal=SIGTERM
+KillSignal=SIGTERM
+RemainAfterExit=true
+ExecReload=/bin/kill --signal HUP $MAINPID
 Restart=on-failure
-RestartSec=5s
-PermissionsStartOnly=true
-ReadWritePaths=/apps/vault/secret
-ReadOnlyPaths=/apps/vault/secret/.clien_token
-StartLimitRurst=3
-StartLinitInterval=800s
-
+RestartSec=5
+TimeoutStopSec=30
+LimitNOFILE=65536
+LimitMEMLOCK=infinity
+LimitCORE=0
 [Install]
 WantedBy=multi-user.target
