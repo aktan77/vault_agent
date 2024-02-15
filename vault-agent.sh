@@ -7,8 +7,7 @@ sudo mkdir -p /apps/vault
 sudo mkdir -p /apps/vault/sercret
 
 #give access to the vault user
-sudo chown vault:vault /apps/vault
-sudo chown vault:vault /apps/vault/secret
+sudo chown vault:vault -R /apps
 
 #install vault binary
 # sudo curl "the/path/to/artifactory"
@@ -32,4 +31,3 @@ sudo cp vault.service /etc/systemd/system/vault.service
 sudo systemctl daemon-reload
 sudo systemctl enable vault
 sudo systemctl start vault
-
